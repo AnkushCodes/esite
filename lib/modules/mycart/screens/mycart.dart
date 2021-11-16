@@ -48,7 +48,7 @@ class _MyCartState extends State<MyCart> {
             ListView(
               children: [
                 ...context
-                    .read<UserBloc>()
+                    .watch<UserBloc>()
                     .cartModel
                     .map((e) => ComponetOfCard(
                           userModel: e,

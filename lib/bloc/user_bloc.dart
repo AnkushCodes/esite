@@ -38,10 +38,12 @@ class UserBloc with ChangeNotifier {
       }
     }
     if (!exist) {
+    userModelList[index].isSelected=true;
       cartModel.add(userModelList[index]);
     }
 
     if (cartModel.isEmpty) {
+       userModelList[index].isSelected=true;
       cartModel.add(userModelList[index]);
     }
 
@@ -56,6 +58,7 @@ class UserBloc with ChangeNotifier {
         cartModel.removeAt(j);
       }
     }
+     userModelList[index].isSelected=false;
     notifyListeners();
   }
 

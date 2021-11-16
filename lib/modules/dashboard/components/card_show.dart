@@ -18,6 +18,7 @@ class _CardShowState extends State<CardShow> {
 
   @override
   Widget build(BuildContext context) {
+    isFaourate =context.read<UserBloc>().userModelList[widget.index].isSelected;
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, DETAIL_VIEW_SCREEN,
