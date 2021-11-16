@@ -18,7 +18,7 @@ class _CardShowState extends State<CardShow> {
 
   @override
   Widget build(BuildContext context) {
-    isFaourate =context.read<UserBloc>().userModelList[widget.index].isSelected;
+    isFaourate =context.watch<UserBloc>().userModelList[widget.index].isSelected;
     return  GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, DETAIL_VIEW_SCREEN,
@@ -111,7 +111,7 @@ class _CardShowState extends State<CardShow> {
                                 setState(() {});
                               },
                               icon: Icon(
-                                Icons.favorite,
+                                Icons.shopping_basket_outlined,
                                 size: 18,
                                 color: isFaourate ? Colors.red : Colors.white,
                               ))),

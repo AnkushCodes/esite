@@ -28,7 +28,7 @@ class _DetailViewState extends State<DetailView> {
                 width: size.width / 1.0,
                 decoration: new BoxDecoration(
                   image: new DecorationImage(
-                    image: new ExactAssetImage('assets/dashboard/b1.jpeg'),
+                    image: new ExactAssetImage('${context.read<UserBloc>().userModelList[widget.index].image}'),
                     fit: BoxFit.cover,
                   ),
                 ),
