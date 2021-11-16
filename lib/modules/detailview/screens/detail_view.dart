@@ -21,17 +21,20 @@ class _DetailViewState extends State<DetailView> {
       child: Scaffold(
         body: Stack(
           children: [
-            Container(
-              height: size.height / 1.2,
-              width: size.width / 1.0,
-              decoration: new BoxDecoration(
-                image: new DecorationImage(
-                  image: new ExactAssetImage('assets/dashboard/b1.jpeg'),
-                  fit: BoxFit.cover,
+           Hero(
+      tag: '${context.read<UserBloc>().userModelList[widget.index].image}${context.read<UserBloc>().userModelList[widget.index].index}',
+              child: Container(
+                height: size.height / 1.2,
+                width: size.width / 1.0,
+                decoration: new BoxDecoration(
+                  image: new DecorationImage(
+                    image: new ExactAssetImage('assets/dashboard/b1.jpeg'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
+                child: new BackdropFilter(
+                    filter: new ImageFilter.blur(sigmaX: 600.0, sigmaY: 1000.0)),
               ),
-              child: new BackdropFilter(
-                  filter: new ImageFilter.blur(sigmaX: 600.0, sigmaY: 1000.0)),
             ),
             Align(
               alignment: Alignment.bottomCenter,
