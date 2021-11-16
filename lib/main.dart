@@ -1,3 +1,4 @@
+import 'package:connection_status_bar/connection_status_bar.dart';
 import 'package:esite/modules/login/screens/login_screen.dart';
 import 'package:esite/modules/splash/ui/splash_screen.dart';
 import 'package:esite/route_genrator.dart';
@@ -28,9 +29,28 @@ class _HomeState extends State<Home> {
         ),
       ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: SPLASH_SCREEN,
-        onGenerateRoute: RouteGenrator.generateRoute,
+        builder:(context,_)=> Stack(
+          children: [
+            MaterialApp(
+              debugShowCheckedModeBanner: false,
+              
+              initialRoute: SPLASH_SCREEN,
+              onGenerateRoute: RouteGenrator.generateRoute,
+            ),
+            Align(alignment: Alignment.topCenter,
+            child: ConnectionStatusBar(
+            color: Colors.red,
+            lookUpAddress: 'google.com',
+            height: 40.0,
+            title: Material(color: Colors.transparent,
+            child: Text('Please check connection',
+            style: TextStyle(color: Colors.white,fontSize: 15.0),
+            ),
+            ),
+            ),
+            )
+          ],
+        ),
       ),
     );
   }
