@@ -33,7 +33,7 @@ class _ComponetOfCardState extends State<ComponetOfCard> {
             //   width: 5,
             // ),
             Text(
-              'Rs. ${widget.userModel.discountPrice}',
+              'Rs. ${widget.userModel.discountPrice} x ${widget.userModel.count}',
             ),
             SizedBox(
               width: 100,

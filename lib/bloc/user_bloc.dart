@@ -102,7 +102,7 @@ class UserBloc with ChangeNotifier {
       int i = cartModel.length;
       int value = 0;
       for (int j = 0; j < i; j++) {
-        value = int.parse(cartModel[j].discountPrice) + value;
+        value = int.parse(cartModel[j].discountPrice)*cartModel[j].count + value;
       }
       price = '$value';
     }
@@ -117,7 +117,7 @@ class UserBloc with ChangeNotifier {
       int i = cartModel.length;
       int value = 0;
       for (int j = 0; j < i; j++) {
-        value = int.parse(cartModel[j].discountPrice) + value;
+        value = int.parse(cartModel[j].discountPrice)*cartModel[j].count + value;
       }
       price = '$value+1000';
     }
