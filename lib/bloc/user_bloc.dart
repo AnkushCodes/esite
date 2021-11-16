@@ -50,6 +50,22 @@ class UserBloc with ChangeNotifier {
     notifyListeners();
   }
 
+
+removeindexCart(int index){
+  int i=0;
+  int setVal=0;
+   cartModel.map((e){
+
+if(e.index ==index){
+  setVal=i;
+}
+++i;
+   } ).toList();
+     userModelList[index].isSelected=false;
+   cartModel.removeAt(setVal);
+   notifyListeners();
+}
+
   removeFromcart(int index) {
     int i = cartModel.length;
 

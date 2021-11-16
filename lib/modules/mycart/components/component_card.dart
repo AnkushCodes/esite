@@ -44,12 +44,12 @@ class _ComponetOfCardState extends State<ComponetOfCard> {
         ),
         trailing: InkWell(
           onTap: () {
-          int j=  context.read<UserBloc>().cartModel.length;
-            for(int i=0;i<j;i++){
-             if(context.read<UserBloc>().cartModel[i].index==widget.userModel.index){
-context.read<UserBloc>().removeFromcart(i);
-              }
-            }
+ 
+context.read<UserBloc>().removeindexCart(widget.userModel.index);
+              setState(() {
+                
+              });
+            
           },
           child: Icon(Icons.cancel),
         ),
