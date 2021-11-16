@@ -29,6 +29,7 @@ class _HomeState extends State<Home> {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         builder:(context,_)=> Stack(
           children: [
             MaterialApp(
